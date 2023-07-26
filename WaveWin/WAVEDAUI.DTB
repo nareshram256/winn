@@ -1,0 +1,61 @@
+Channel Title Information for Device: 250
+
+ Station: GURGAON M-2 P442
+
+->Analog Titles               Full Scale Value
+ 001 VA                         1038713.9000
+ 002 VB                         1038713.9000
+ 003 VC                         1038713.9000
+ 004 VN                         1038713.9000
+ 005 IA                         90502.4540
+ 006 IB                         90502.4540
+ 007 IC                         90502.4540
+ 008 IN                         90502.4540
+ 009 {Software Channel}             1.0000
+ 010 {Software Channel}             1.0000
+ 011 {Software Channel}             1.0000
+ 012 {Software Channel}             1.0000
+ 013 {Software Channel}             1.0000
+ 014 {Software Channel}             1.0000
+
+->Digital Titles              Original State
+*1 Any Start                    0
+*2 Any Trip                     0
+ 3 DIST Trip A                  0
+ 4 DIST Trip B                  0
+ 5 DIST Trip C                  0
+ 6 Z1                           0
+ 7 Z2                           0
+ 8 T2                           0
+ 9 Z3                           0
+ 10 T3                          0
+ 11 Z4                          0
+ 12 T4                          0
+ 13 DIST Sig. Send              0
+ 14 DIST. Chan Recv             0
+ 15 SOTF/TOR Trip               0
+ 16 IN>1 Trip                   0
+ 17 Stub Bus Enable             0
+ 18 I>4 Trip                    0
+*19 V>1 Trip                    0
+ 20 V>2 Trip                    0
+ 21 VT Fail Alarm               0
+ 22 Brok.Cond. Alarm            0
+ 23 Power Swing                 0
+ 24 MAIN_1 OPTD                 0
+*25 MCB R-PH OPEN               0
+*26 MCB Y-PH OPEN               0
+*27 MCB B-PH OPEN               0
+*28 TCB R-PH OPEN               0
+*29 TCB Y-PH OPEN               0
+*30 TCB B-PH OPEN               0
+ 31 DT RECV CH.-1/2             0
+ 32 MCB A/R OPTD                0
+ 33 {Software Channel}          0
+ 34 {Software Channel}          0
+ 35 {Software Channel}          0
+ 36 {Software Channel}          0
+ 37 {Software Channel}          0
+ 38 {Software Channel}          0
+ 39 {Software Channel}          0
+ 40 {Software Channel}          0

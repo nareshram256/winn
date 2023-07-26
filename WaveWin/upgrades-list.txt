@@ -1,0 +1,576 @@
+Wavewin Areva Upgrades List - 05/16/2006
+
+Below is a list of all the addition and changes.
+
+Wavewin Areva C.G - 05/16/2006
+
+1.  System: Fixed a problem with the /print passed parameter.  In previous versions it was required that the contents of
+    the window be fully painted on screen before the print occurred. When too many prints were issued close together a range check error
+    was generated because the screen information was not fully painted.  We modified the print to work with a virtual graphics handle
+    instead of using the window's graphics handle.
+
+2.  File Manager: Corrected a problem with the unzip components used to unzip the .ZAT files. Frederic reported that a message box
+    was displayed from the ZipTV components stating that the components were not registered.  We corresponded with ZipTV and have 
+    corrected the problem.  The components on Softstuf's development stations were not properly registered.
+
+3.  Data Plotting: Harmonics, added a check to avoid the bar width going under 1.
+
+Wavewin Areva C.F - 04/14/2006
+
+1.  System: Fixed a number of problems and made some changes to the passed parameters:
+       a. Changed the /X1 and /Y1 passed parameters to /X and /Y. There was no need for the 1 indicator since we changed /X2 and
+          /Y2 to /W and /H.
+       b. Fixed a problem with the /Print passed parameters on slower machines. The print function was being called before the
+          the paint method for the window.
+       c. Corrected a problem with viewing files.
+       d. Corrected a problem with the /TopMost passed parameter.
+
+2.  Data Plotting: Added an option in the Harmonics window to change the bar size to show as many harmonics as possible
+    in one screen.
+
+3.  Data Plotting: Changed the units for the time bar and Delta X status bar to show time in a readable format. We also added
+    a unit and color indicator according to the time displayed.
+
+Wavewin Areva C.E - 03/22/2006
+
+1.  System: Added more resizing for the dialogs to support the Spanish and German languages.
+
+2.  System: Added Frederics suggestions for passed parameters and also fixed a few problems with the new passed parameters.
+
+3.  Data Plotting: Added a fixed dotted light red fault bar, also added an option in the properties dialog to show
+    or hide the fault bar.
+
+4.  Data Plotting: Added resizing to the harmonics window to view as much information as needed.
+
+
+Wavewin Areva C.D - 02/21/2006
+
+1.  System: Added support to view Wavewin Areva in different languages.  First language added was French.  All 
+    remaining languages can be added to the SIL and SIB files without further coding in the software.  Also all
+    menu items have been added to the SIL and SIB files.  To change the active language select the "Display" option
+    under the "Options" menu in the File Manager.  Slect the desired language from the "Languages" drop down list.
+
+2.  File Manager: Moved the last active directory to the Wavewin.ini File.  In previous versions the last active 
+    directory was saved to the Template database that has a limit of 80 characters.  The Wavewin.ini eliminates 
+    the 80 character limit.
+
+3.  Data Display: For files that have digital channels only made sure that all digital channels are displayed if there
+    are no triggered channels in the file.
+
+
+Wavewin Areva C.A 11/28/2005
+
+1.  File Manager:  Added sorting to the table folder tree.
+
+2.  File Manager:  Always open Wavewin's folder tree to the last active directory.
+
+3.  Data Plotting: Fixed a problem with the boundary check for Comtrade ASCII digital channels.
+
+4.  Data Plotting: Fixed a problem with calculating the sampling frequency for Comtrade files that define
+    a zero for the sampling frequency.
+
+5.  Data Plotting: Increased the maximum number of harmonics displayed in the harmonics table from 100 to 200.
+
+
+Wavewin Areva C.7 09/12/2005
+
+1.  Data Plotting: Added a histogram view in the harmonics window. Click the change view button in the upper right corner
+    of the window to toggle between the table and the histogram.  The histogram view allows for selecting the column
+    of data to show.  Click on the "Select Bar Values" drop down menu to change the values displayed. The "% of 
+    Fundamental" is the default view.
+
+
+Wavewin Areva C.6 - 08/15/2005
+
+1.  Data Plotting: Improved the Harmonics window to display the number of harmonics according to the number of samples
+    per cycle for the open file.
+
+2.  Data Plotting: Fixed a problem wixth the Comtrade read engine.  The last analog channel's data values were not 
+    being read therefore the sample values were defaulted to zero.  The Comtrade engine was modified so that a 
+    maximum of 255 analog channels can be displayed in the data plotting window.  The maximum analog channel boundary 
+    was not being checked properly and the last analog channel was not being read.
+
+
+Wavewin Areva C.5 - 08/14/2005
+
+1.  Data Plotting: Added two new columns to the Analog table. DFTMag = Displays the DFT Magnitude calculated between the
+    RMS bar (black dotted line) and the data bar (solid data bar).  Crest = Displays the DFTMag column divided by the
+    RMS column.
+
+2.  Data Plotting: Added a new field in the harmonics dialog called "Total Harmonic Distortion".  The "Total Harmonic
+    Distortion" field displays the ((sqaure root of the summation of the squares of DFT Magnitudes from harmonics 2 to 7)
+    divided by square root of 2) and that quantity divided by the DFT Magnitude of the Fundamental.
+
+3.  File Manager:  Fixed a problem with the status bar fields not updating when navigating via the tree.
+
+4.  File Manager:  Modified the table sort engine to always sort the columns in upper case.  The previous sort engine
+    was sorting the column data as is.  This was causing a problem when files are named with upper case and lower case.
+
+5.  Data Plotting: Fixed a problem with reading multiple binary Comtrade files.  The Comtrade binary read multiple files
+    was not reading the files in proper sequence.
+
+6.  Data Plotting (SACS):  Fixed a problem with the SACS returning an error when calculating an Envelope using the
+    "A" and "E" script commands.
+
+7.  Data Plotting:  A number of requests have been made to change the way the expand and condense time displays
+    the waveform signals.  In versions previous to C.3 the expand and condense would display the first sample out of
+    the group of samples to condense or expand.  To  better show the peaks we changed that functionality in version C.3
+    to pick the hightest value in the group of samples to condense/expand.  This still did not show all the information.
+    In this version Wavewin now displays all of the samples in the file.  When the signals are condensed the samples
+    are plotted over each other.
+
+8.  Data Plotting:  Added a feature to hop the data bar by one cycle for waveform files and one day for load files.
+    This feature is keyboard activated, use the Shift+Ctrl+Right/Left Arrows to move the data bar one cycle/day from
+    the previous position.
+
+9.  File Manager:  Added Cut, Copy and Paste to easily move files from one directory to another.  The new Cut, Copy
+    and Paste features work in the same fashion as Window's Explorer.  Use the following menu items or short-cut keys
+    to activate the added file features: Cut:(Edit Menu: Cut Option, Ctrl+X, Shift+Del), Copy:(Edit Menu: Copy Option,
+    Ctrl+C, Ctrl+Ins), Paste:(Edit Menu: Paste Option, Ctrl+V, Shift+Ins).
+
+    Drag and Drop coming soon.
+
+10. File Manager:  Added shortcuts in the file table right click pop-up menu for Cut, Copy and Paste files and for
+    the Zip, Email and Refresh features.
+
+11. File Manager (Save As Comtrade):  Fixed a problem with Save As Comtrade for the 1991 and 1999 formats.  The 1991
+    format was defining 3 fields (substation,device ID,version #) for the first line in the CFG file. The proper
+    format is substation,version #.  Wavewin now puts the substation - Device ID,version#. For the 1999 format the
+    last line in the CFG file is the time multiplier for the sample times in the .DAT file.  Wavewin was only adding
+    the time multiplier field to the CFG if it was greater than 1.  Now it always adds the time multiplier field.
+
+12. File Manager: Fixed a problem with reading the line frequency from the Comtrade ".CFG" file.  The line
+    frequency was always defaulting to 60.
+
+13. File Manager: Fixed a problem with the list of child windows being displayed under the wrong menu item.
+
+14. Data Display:  Added a medium display to the Auto Scale (F6, Atl-D, A) toggle feature.  Auto Scale toggles between
+    (Off, On and ++).  ++ plots the signal using the number of maximum pixels allowed for the channel.  The highest value
+    is plotted at the maximum position allowed and the smallest value is plotted at the lowest position allowed.  This
+    feature was added to clearly show the profile of frequency, Vdc and load data channels.
+
+15. Data Display:  Added a new option in the properties dialog under the Comtrade tab called: "Show Date
+    in (US/European/Japan) Format. This new option allows for selecting a fixed date format for the Comtrade
+    files.
+
+16. Data Display:  Fixed a problem with the fault time line when calculating if the time is greater then a k.
+
+17. File Manager: Added a Directory Tree for easy navigation.            
+
+18. File Manager (Delete Files): Changed the way the delete files engine works. It will now send files that reside 
+    on the computer to the Recycle Bin all others are permanently deleted.     
+
+19. File Manager (Rename Files/Folders): To rename a folder in the tree click on the folder name twice 
+    to display the edit box. To rename files select the rename option from the Files menu.
+
+20. File Manager:  Added the ability to email marked files directly from the file table.  
+    Click on the email menu button to activate.  All support files are automatically attached to the
+    email message.
+
+21. File Manager:  Added the ability to zip marked files directly from the file table.  To activate, open 
+    the "File" menu and select "Zip Marked Files" option. All support files are automatically added to the zip file
+    upon confirmation.
+
+22. Data Plotting:  Added the ability to email the active event file. All support files 
+    are automatically attached to the email message.  To activate, click on the Email menu button.
+
+23. Data Display:  Added "Analog Input" & "External Input" as a non used channel.  Wavewin does not show analog
+    and digital channels that contain the following strings:
+      UNUSE
+      UNDEF
+      NOT D
+      NOT U
+      NOT I
+      NOT A
+      {
+      N/A
+      ANALOG INPUT
+      ANALOG CHANNEL
+      EXTERNAL INPUT
+      EVENT CHANNEL
+      CHANNEL:
+      DIGITAL TRACE #
+      SPARE
+
+24. Data Display: Fixed the data display in the Windows XP display mode.  The last digital channel was being 
+    overwritten by the window's border.  Also fixed the sizing of the Wavewin main application window to size 
+    around the desk top toolbars.
+
+
+Wavewin Areva B.X - 01/24/2005
+
+1.  Data Plotting: Increased the number of analog channels per window from 128 to 256.
+
+2.  Data Plotting (Load Files):  Added a new column "AvgWin" to the Analog Table located between the traces 
+    and the circular chart.  The "AvgWin" column averages all the sample values between the RMS bar (black
+    dotted vertical bar) and the data bar (black solid verical bar).
+
+3.  Data Plotting: Added a new option to resize the RMS sliding window (area between the black dotted vertical bar 
+    and the black solid bar).  The size of the sliding window can be changed by clicking on the resize sliding
+    window menu speed button to bring up a dialog or by selecting a fixed number from the drop down menu list.
+    The window in Load files is changed according to hours or days and in transient files according to cycles.
+    To bring up the resize dialog from the menu select the "View" menu then select the "Set Sliding Window" option.
+
+4.  System Speed Bar Menu: Added a new "Back" button to go back to the previous window. 
+
+5.  File Manager: Added a new feature to save summary files.  The "Waveform Summaries" submenu option under 
+    the "Options" menu has a new item called "Save summaries".  Save Summaries generates a summary file for 
+    each marked or selected file and saves it as an ASCII text file to the specified destination path.  The 
+    file is named with the filename specified or by using the IEEE PSRC long file naming convention.  The 
+    summary file extensions are "*.txt".
+
+6.  Data Plotting: Added 2 new buttons to the phasor/circular chart window (uparrow/dowarrow).  The new up arrow
+    and down arrow buttons allow for increasing/decreasing the phasor/circular chart scale independent of the 
+    traces. 
+
+7.  Data Plotting: Added 2 new buttons to the trace window (uparrow/dowarrow).  The new up arrow and down arrow 
+    buttons allow for increasing/decreasing the trace's amplitude independent of the phasor/circular chart. 
+
+8.  Data Plotting:  Added 2 new buttons to the trace window (left arrows).  The left arrow to the left of the
+    scrollbar shifts the sample at the databar (vertical solid black line) to the beginning of the window.  The
+    left arrow to the right of the scrollbar shifts the separator bar between the traces and the analog table 
+    to the databar.
+
+9.  Data Plotting: Corrected a problem in the "Save As Comtrade" feature when saving the sampling rate information to 
+    the ".CFG" File.  The problem was occuring after a displayed file was modified by, Change Frequency, Truncate Cycles, 
+    Duplicate Cycles, Append and Merge.  Older versions wrote the original sample rate information to the new 
+    Comtrade file.
+
+10. Data Plotting: Added a feature that will not display a phase angle in the analog table or in the phasor diagram
+    if the channel is DC or Frequency (Hertz).  
+
+11. Data Plotting:  Added a limit for analog channels (256 analog channels/display) for the Waveform Merge 
+    & Append features.  Can not Append/Merge waveforms if the combined exceeds 256 analog channels or exceeds 
+    1024 digital channels.
+
+12. Data Plotting:  Fixed a problem with reading load data times from a Comtrade file that specifies the data  
+    in seconds.
+
+ 
+Wavewin Areva B.R - 10/12/2004 
+
+1.  Data Plotting:  Improved the SAC harmonic calculations to include the magnitude and angle.  Previous calculations
+    were storing the magnitude value only.
+
+2.  Data Plotting:  Fixed a problem with the DC units in a Comtrade File not showing up in the Analog Table.
+
+3.  Data Plotting:  Took out the display of the phasors in the phasor diagram for analog channels that are not Volts, 
+    Amps, Watts and Vars.  Also, now displays "N/A" in the Phasor Analog table column for channels that are not Volts, 
+    Amps, Watts and Vars.
+
+
+Wavewin Areva B.P - 08/21/2004 
+
+1.  Data Plotting:  Upgraded the "Save As Comtrade" engine to handle the older 1991 version and the newer 1999 
+    version.
+
+2.  Data Plotting:  Added a new field in the "Properties" dialog to select the Comtrade version for the "Save As
+    Comtrade" engine.  The new field is in the "Comtrade" tab and is called "Save Using Comtrade Version:".  Select
+    1991 for the older version and 1999 for the newer version.  The default version is the newer 1999 version.
+
+
+Wavewin Areva B.P - 06/16/2004 
+
+1.  File Manager:  Added a new feature to open multiple waveform files from the file table.  Mark the files 
+    desired and select the "Open Marked Files" menu option under the Options/Waveform File(s) menu.  The 
+    files will be tiled horizontally and the file manage will be minimized.
+
+2.  File Manager:  Append Waveform Files:  The two features available under the Options/Waveform File(s)/Append 
+    menu will append all the marked waveform files in time either by deleting the common times between files 
+    (Discard Common Times) or appending all marked files back to back (Back to Back), sorted oldest to latest.  
+
+    The files must be of the same type.
+
+3.  File Manager:  Merge Waveform Files:  The two features avaliable under the Options/Waveform File(s)/Merge 
+    menu will merge different types of files into one display.  
+      By Time: Merge channel samples if they have a common time segment.  The reference time is from the file 
+               with latest start date and time. The file with the least amount of samples determined the length 
+               of the new merged file.
+      By Sample: Merge regardless of time stamps. The reference time is from the first marked file. And the 
+                 file with the least amount of samples determines the length of the file.
+
+    When files with different sampling frequencies are merged a dialog will be displayed.  The dialog contains 
+    a list of all the sampling frequencies in the marked files.  Select the frequency for the merged file or 
+    enter a new frequency.
+
+    To identify the merged channels the station name for each file is added to the beginning of the analog and 
+    digital channel names.  To turn off this feature open the Properties dialog in the data-plotting window.  
+    Click on the Append/Merge tab and uncheck the “Add the File’s Station Name to Beginning of the 
+    Analog/Digital Channels” field.	
+
+4.  Data Plotting:  Added a new feature Append Open Files. There are two options available under the Append 
+    Open Files Menu (same feature as the file manager’s Append):
+      Discard Common Times: Any common times found in the open files will be deleted from the oldest file.
+      Back to Back: The files are appended back to back.  No samples are deleted.
+    
+    The files must be of the same type. 
+
+5.  Data Plotting:  Added a new feature Merge Open Waveform Files. There are three options available under the 
+    Merge Open Files Menu:
+      By Time:   Merge channel samples if they have a common time segment.  The reference time is from the file 
+                 with latest start date and time.  The file with the least amount of samples determined the 
+                 length of the new merged file.
+      Manually:  Use the data bars to highlight where the common sample time is in each window.  Merge manually 
+                 will then line up the data bars and adjust the time stamps accordingly. This option is used when 
+                 the file times are not synchronized.  The active window determines the time stamp of the new 
+                 merged file and the open window with smallest number of samples determines the length of the 
+                 new merged file.
+      By Sample: Merge regardless of time stamps and/or data bar positions.  The reference time is from the 
+                 active window.  And the file with the least amount of samples determines the length of the file.
+
+    When files with different sampling frequencies are merged a dialog will be displayed.  The dialog contains 
+    a list of all the sampling frequencies in the opened files.  Select the frequency for the merged file or 
+    enter a new frequency.
+
+    Merging Open Files allows for flexibility of what channels are merged.  Merge Open Files will merge either 
+    the marked channels only or if there are no marked channels then it will merge the visible channels.
+
+    To identify the merged channels the station name for each file is added to the beginning of the analog and 
+    digital channel names.  To turn off this feature open the Properties dialog.    Click on the Append/Merge 
+    tab and uncheck the “Add the File’s Station Name to Beginning of the Analog/Digital Channels” field.
+
+6.  Data Plotting:  Added a menu button to gain easy access to the driver’s data type setting.  The data type 
+    setting specifies if the samples for the active driver are saved in RMS values or in instantaneous values.
+
+7.  Data Plotting:  Modified setting the sample time stamps in the Comtrade reader.  If the sampling frequency 
+    is set in the .CFG file then the time stamp is calculated from the sampling frequency.  If the sampling 
+    frequency is 0 then the time stamp is set from the time stamp in the .DAT file.
+
+8.  Data Plotting:  Fixed a problem with displaying the waveform data and analog table when switching between
+    open windows.  The system was losing the window handels when a left mouse click was encountered.
+
+9.  File Manager:  Added a new feature in the File Menu called "ComName(s) Rename".  This feature will rename all
+    the marked waveform files (file entries displayed in red) using the IEEE long file naming convention (ComNames).  
+    The format for the ComName Files are: 
+       fault date,fault time,time code,station,device,company,duration,type,latitude,longitude,user field.ext
+          
+    All files associated with the marked waveform files will be renamed.  
+      Comtrade files: the ".CFG", ".INF", ".HDR", ".DAT" and "*.D##" files will be renamed.
+
+10. File Manager:  Added a new feature in the File Menu called "ComName Properties".  There are 4 fields in the
+    ComName format that can not be extracted from the waveform files: "Company Name", "Time Code", "Latitude" and 
+    "Longitude". The "ComName Properties" allows for entering these fields prior to renaming.
+
+11. File Manager & Data Plotting:  Added a new feature in the "Save As Comtrade" option to use the ComNames long 
+    file naming convention for the Comtrade Name.  There is a new check box inside the "Save As Comtrade" dialog
+    called:  "Use the ComNames Naming Convention to Name the Comtrade File(s)".  
+    If checked the system will automatically assign a ComName filename to all Comtade files saved.  If unchecked
+    then the files will be named using the name entered into the "File Name" field.
+
+
+Wavewin Avera B.L - 04/01/2004
+
+1.  Data Plotting:  Added support to read Comtrade files that are distributed into multiple data files.
+
+2.  Data Plotting:  Fixed a problem with displaying SAC values when operating with RMS calibrated data.
+
+3.  File Manager:  Added a new feature to Append like waveform files in time.  A new sub menu
+    has been added to the "Options" menu called "Waveform File(s)".  Use the "Open Selected Waveform 
+    File" option to display the traces in the selected file.  Use the "Append Marked Waveform Files"
+    option to append like waveform files in time.  The marked file's analog and digital channels must match.
+
+4.  File Manager:  Added a new feature to set up certain parameters for the append feature. Select the 
+    "Waveform Properties" option under the "Waveform File(s)" menu option. To throw out samples with common times
+    check the "Discard Common Times" option.  Next, select what file will have the times discarded from:
+    the new file being created or the files being appended.
+
+5.  Data Plotting:  Added a new setting to set the Opening frequency for each supported driver.  
+    To setup this parameter open the desired waveform file, next select the "Change Frequency" option from
+    the "Data" menu and check the "Always Open" box.  The frequency entered into the New Frequency" field
+    will be the frequency displayed for all the files for the active driver.
+
+6.  Data Plotting:  Added a new feature to Show/Hide the event separator bars for multiple event files. The
+    new field is in the "Properties" dialog under the "Display Settings" tab.
+
+7.  Data Plotting: Fixed a problem with displaying leading zeros for the fault time in the Waveform 
+    Summary window.
+
+8.  Data Plotting:  Added a new feature to the data plotting's "Data" menu to Truncate cycles.  
+    Truncate can be applied to remove cycles from the beginning of the data, the end of the data 
+    and from the middle of the data.
+
+9.  Data Plotting:  Added a new feature to the data plotting's "Data" menu to Duplicate the cycle 
+    of data between the RMS bar and the data bar.  A dialog box allows for specifing the number of 
+    cycles to add.
+
+10. Data Plotting: Added two new features to the data plotting's "Data" menu to change and restore the 
+    sampling frequency.     
+	
+        a.) Change sampling frequency: This feature allows for changing the sampling frequency of the 
+            displayed record.  If Sync mode is active then Change Sampling Frequency will change all open 
+            windows to the entered frequency.
+	b.) Restore Original Data:  This feature is active only after the sampling frequency is changed.  
+            It allows for restoring the original raw data of the displayed record.  If Sync mode is active 
+            then Restore Original will restore all the open windows to their original raw data.
+
+11. Data Plotting: Added 3 new options to the "Values" menu.
+
+	a.) Mark Raw Samples - Draws a small circle at all the original raw samples.
+	b.) Mark Peak Values - Draws a small square at all the peaks.
+	c.) Mark Change in Sign Values - Draw a small triangle at all samples where a change in sign occurs.
+
+12. Data Plotting: Modified the Channel Information, Summary and Raw Data menu buttons to indicate an ASCII 
+    display with the corresponding character signifying the type of data.
+
+13. Data Plotting: Added a new menu button to open new files or to open one of the last 14 files opened.
+
+14. Data Plotting: The data plotting window's menu has been arranged to be more windows compliant.
+    A large number of requests from Wavewin users asked to improve the menu. 
+    Below are the additions:
+	- Added a new "File" menu.  The "File" menu handles all commands directly related to the waveform file.
+        - Added a new "Open" command under the "File" menu to open new waveform files.
+        - The "Data" menu handles all commands relating to the data such as: Expand & Contract Time, Increase 
+          & Decrease amplitude, auto scale...
+        - Added a new "Channel" menu.  The "Channel" menu handles all commands directly related to the 
+          Analog and Digital channels.
+
+15. Data Plotting: The "Display" dialog used for setting up the properties of the window has been moved to the 
+    new "File" menu and is now called "Properties".
+
+16. Data Plotting: The "Displayed Device's Data Type" field in the "Properties" dialog (formally the "Display" dialog)
+    has been moved from the "General" tab to the "Display Settings" tab.
+
+17. File Manager: Improved the speed of read engine for the File manager. Enhanced the way 
+    the memory is allocated when reading the file allocation table.  
+
+
+Wavewin Areva B.F - 01/19/2004
+
+1.  Data Plotting: Fixed a problem reading the sampling frequency in the Comtrade driver.  
+    The driver was defaulting the sampling frequency to 0 if it was >32768 or <32768. Took
+    out the limit and open ended the sampling frequency value.
+
+2.  Data Plotting: Added a new feature to save RMS Calibrated data as Peak data for the 
+    Save As Comtarde option. This feature is optional. Change the "Convert RMS Calibrated 
+    Data" field in the "General" tab of the "Display dialog" to "Yes" to activate.
+
+3.  Data Plotting: Fixed a problem with the "Software Analog Channel" menu disappearing.
+
+4.  Data Plotting: Took out the gray background for the digital channels in the print outs.
+
+
+Wavewin Areva B.A - 10/14/2003
+
+1.  Data Plotting: Allowed for Comtrade Files to be displayed if the digital channels have 
+    no original states set.
+
+2.  Data Plotting: Added two new buttons in the phasor/circular chart window title: 
+    "P" to display the phasors at the data bar and "C" to display the circular chart.
+
+3.  Data Plotting: Fixed a problem reading Comtrade CFG files that use a line feed only as 
+    an end-of-line marker.
+
+4.  Data Plotting: Added support to display Comtrade files that have digital channels only.
+
+5.  Data Plotting: Modified the equation for the fault time bar to have more resolution.
+
+
+Wavewin Areva B.9 - 09/04/2003
+
+1.  Data Plotting: Took out multipling the sample values by -1 in the ABB TPU Cap files.
+
+
+Wavewin Areva B.7 - 08/03/2003
+
+1.  Data Plotting: Improved the error checking on Comtrade files.   
+
+2.  Data Plotting: Increased maximum zoom factor for auto-scale mode from 99999 to 999999999 to allow 
+    for further magnification. 
+
+3.  Data Plotting: Fixed a problem with the auto scale feature for Log files.
+
+4.  Data Plotting (Save Displayed Values): Added a new extension "*.mac" for the Save Displayed Values Feature.
+
+5.  Data Plotting (Save Displayed Values): Allowed for the Display Save Values File and Format File Window to 
+    be independent of the data plotting window.  Does not close the Save Values File and Format File Window
+    when closing the data plotting window.
+
+6.  Data Plotting: Enhanced the Fault time bar locator to look for the closes match defined by the selected format.
+    Prior versions looked for an exact match.
+  
+7.  Data Plotting: Enhanced the Sync Time feature to look for the closes match.  Previous versions looked for
+    an exact match.
+
+8.  Data Plotting: Corrected the Sampling Frequency for Comtrade Files that specify a time scale multiplier.
+
+9.  Data Plotting: Enhanced the Sync Manual Mouse Click to displace the mouse according to time difference.  
+    Previous versions displaced according to click position.
+
+10. Data Plotting: Corrected the Fault Time displayed in the Waveform Summary Window.
+
+11. Data Plotting: Added a Prompt to ask to overwrite existing Comtrade files for the Save As Comtrade feature.
+
+12. Data Plotting: Corrected the Save As Comtrade feature to save only the digital channels that are visible.
+    Previous versions were saving the digital channels when the digital section was hidden using the drag mouse.
+  
+
+Wavewin Areva B.6
+
+1. Data Plotting: Fixed a problem with the scale factors for the print engine.
+
+
+Wavewin Areva B.5
+
+1. Data Plotting: Advanced the Save Display Values option.  Added user defined Templates.
+   Refer to the Data Plotting help window "Save Displayed Values" section for more information.
+
+2. Data Plotting: Added and new menu option "Values".  Allows for saving Values displayed
+   in the Analog Table to a text file (Mark & Save) in the default format or in the format 
+   defined in the selected Template file.  Provides "Open", "New" and "Clear" features for
+   the active Values file and provides "New" and "Open" features for the Template Files. 
+   Refer to the Data Plotting help window "Save Displayed Values" section for more information.	
+
+3. Data Plotting: Added the Horizontal Bars to the print engine.
+
+4. Data Plotting: Fixed a time scale problem with Comtrade files that specify a time scale multiplier.
+
+
+Wavewin Areva B.4
+
+1. Data Plotting: New time based display.  New field "Trace Display Type" added to the "Display" 
+   dialog under the "General" tab. Allows for toggling between a sample base display and the time 
+   based display.
+
+2. Data Plotting: New Fault reference time bar.  Shows the time difference from the fault time.
+   
+3. Data Plotting: New Close button for the Phasor/Circular Chart window.
+
+4. Data Plotting: New Close button for the Channel Information Table.   
+
+
+Wavewin Areva B.3
+
+1. File Manager: Fixed a problem with the SOE table when displaying files with SACs defined.
+
+2. Data Plotting: Fixed a problem with scaling the harmonic values in the Harmonics window.
+
+
+Wavewin Areva B.2
+
+1. Data Plotting: Allowed for the Constants in the SACs to be real values.
+
+2. Data Plotting: Changed the way the digital bits are displayed: a value of 1 = thick green line, 
+   a values of 0 = thin black line.  The A and N status next to the digital titles stay 
+   the same. They are set according to the bit compared to the original state, 
+   A = different then original state, N = same as original state.
+
+3. Data Plotting: Added in the SAC window divide and multpliy operators:
+       division = ':'
+       multiplication = '*'  
+       
+    example: +1/*2/        - multiply channel 1 to channel 2
+             +1/+2/+3/*^12 - multiply the addition of channel 1,2 and 3 to a constant of 12
+             +1/:2/        - divide channel 1 by channel 2
+             +1/+2/+3/:^12 - divide the addition of channel 1,2 and 3 by a constant of 12
+
+4. Data Plotting: Added in the SAC window the ability to use a constant value for the "+", "-",":" and "*" operators. 
+    
+    example: -12/*^15     - reverse channel 12 and multiply with a constant of 15
+             +2/+3/+4/*^5 - added channel 2,3 and 4 and multiply with a constant of 5
+             +2/+3/+4/:^5 - added channel 2,3 and 4 and divide by a constant of 5
+
+5. Data Plotting: Added phase shifts to the SAC operators mainly for + and - sequence components:
+    
+    example: +1/+2@120/+3@240/:^3/  - (+)Seq
+             +1/+2@240/+3@120/:^3/  - (-)Seq
+             +1/+2/+3/:^3/          - (0)Seq

@@ -1,0 +1,80 @@
+* File Information::
+* -------------------
+            Station: KWHEP
+             Device: 116
+          File Name: E:\KD\AVILABITY VERIFICATIONS\2019\AUG\DR\Thursday 22 August 2019 18.16.14.000.DAT
+          File Size: 248065 Bytes
+      Prefault Time: 22/08/2019 18:16:13.672000
+         Fault Time: 22/08/2019 18:16:14.178000
+          Save Time: 08-31-2019 10:30:02
+       Process Time: 09-20-2019 11:41:41
+ Start Date && Time: 22/08/2019 18:16:13.672000
+   End Date && Time: 22/08/2019 18:16:15.188736
+      File Duration: 1  Sec(s) - 516 Mils(s) - 736 Mics(s)
+ Sampling Frequency: 1201.000000, 832  Microsecond Reading
+     Line Frequency: 50.000000
+
+* Highest/Lowest Analog Peaks Chart::
+* -----------------------------------
+>   Max-Val      Min-Val     LPeak-Up     LPeak-Dn     OneBit   pUnits   Description                  HP-Dif.     LP-Dif.
+ 329172.800  -329394.700   -17973.900    63812.100   31.7000     V       1-VA                          7.000    1446.000
+ 393111.700  -381351.000   292527.600  -276550.800   31.7000     V       2-VB                        371.000     504.000
+ 363282.000  -364613.400   318172.900  -310723.400   31.7000     V       3-VC                         42.000     235.000
+ 446621.300  -464373.300     9890.400    -9922.100   31.7000     V       4-VN                        560.000       1.000
+   3132.486    -2254.064      -16.574       -8.287    8.2870     A       5-IA                        106.000       1.000
+   1433.651    -1044.162      -24.861       16.574    8.2870     A       6-IB                         47.000       1.000
+   2303.786    -1400.503    -1392.216       16.574    8.2870     A       7-IC                        109.000     166.000
+   6637.887    -4649.007      -74.583       24.861    8.2870     A       8-IN                        240.000       6.000
+
+* Events/Sensors Activity Summary:
+* ---------------------------------
+>Fst  Lst  Fst-Change       Lst-Change      Changes    Description
+  N    N    18:16:14.177856  18:16:14.281024  002         1-Any Start   
+  N    N    18:16:14.239424  18:16:14.355904  002         2-Any Trip   
+  N    N    18:16:14.239424  18:16:14.279360  002         3-DIST Trip A   
+  N    N    18:16:14.191168  18:16:14.279360  002         6-DIST Fwd   
+  N    N    18:16:14.191168  18:16:14.279360  002         9-Z2       
+  N    N    18:16:14.249408  18:16:14.355904  002        21-AR INITI R-PHASE   
+  N    N    18:16:14.249408  18:16:14.354240  002        22-AR INITI Y-PHASE   
+  N    N    18:16:14.249408  18:16:14.355904  002        23-AR INITI B-PHASE   
+  N    N    18:16:14.239424  18:16:14.365888  002        24-CARR RECIVE   
+  N    N    18:16:14.277696  xx:xx:xx.xxxxxx  001        25-CB R PHASE OPEN   
+  N    N    18:16:14.279360  xx:xx:xx.xxxxxx  001        26-CB Y PHASE OPEN   
+  N    N    18:16:14.277696  xx:xx:xx.xxxxxx  001        27-CB B PHASE OPEN   
+  N    N    18:16:14.239424  18:16:14.355904  002        28-Any Int. Trip A   
+  N    N    18:16:14.254400  18:16:14.355904  002        29-Any Int. Trip B   
+  N    N    18:16:14.254400  18:16:14.355904  002        30-Any Int. Trip C   
+  N    N    18:16:14.191168  18:16:14.289344  002        31-DIST Sig. Send   
+
+* Events/Sensors Activity Log:
+* -----------------------------
+> State   Trigger-Time                 Description
+    A     22/08/2019 18:16:14.177856    1-Any Start        
+    A     22/08/2019 18:16:14.191168    6-DIST Fwd         
+    A     22/08/2019 18:16:14.191168    9-Z2               
+    A     22/08/2019 18:16:14.191168   31-DIST Sig. Send   
+    A     22/08/2019 18:16:14.239424    2-Any Trip         
+    A     22/08/2019 18:16:14.239424    3-DIST Trip A      
+    A     22/08/2019 18:16:14.239424   24-CARR RECIVE      
+    A     22/08/2019 18:16:14.239424   28-Any Int. Trip A  
+    A     22/08/2019 18:16:14.249408   21-AR INITI R-PHASE 
+    A     22/08/2019 18:16:14.249408   22-AR INITI Y-PHASE 
+    A     22/08/2019 18:16:14.249408   23-AR INITI B-PHASE 
+    A     22/08/2019 18:16:14.254400   29-Any Int. Trip B  
+    A     22/08/2019 18:16:14.254400   30-Any Int. Trip C  
+    A     22/08/2019 18:16:14.277696   25-CB R PHASE OPEN  
+    A     22/08/2019 18:16:14.277696   27-CB B PHASE OPEN  
+N         22/08/2019 18:16:14.279360    3-DIST Trip A      
+N         22/08/2019 18:16:14.279360    6-DIST Fwd         
+N         22/08/2019 18:16:14.279360    9-Z2               
+    A     22/08/2019 18:16:14.279360   26-CB Y PHASE OPEN  
+N         22/08/2019 18:16:14.281024    1-Any Start        
+N         22/08/2019 18:16:14.289344   31-DIST Sig. Send   
+N         22/08/2019 18:16:14.354240   22-AR INITI Y-PHASE 
+N         22/08/2019 18:16:14.355904    2-Any Trip         
+N         22/08/2019 18:16:14.355904   21-AR INITI R-PHASE 
+N         22/08/2019 18:16:14.355904   23-AR INITI B-PHASE 
+N         22/08/2019 18:16:14.355904   28-Any Int. Trip A  
+N         22/08/2019 18:16:14.355904   29-Any Int. Trip B  
+N         22/08/2019 18:16:14.355904   30-Any Int. Trip C  
+N         22/08/2019 18:16:14.365888   24-CARR RECIVE      
